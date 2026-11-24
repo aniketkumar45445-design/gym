@@ -1,0 +1,1481 @@
+Sans for bold athletic headings -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gs<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitZone — Train. Transform. Thrive.</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Inter & Plus Jakarta tatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            fitBlack: '#0B0B0B',
+            fitCard: '#141414',
+            fitCardHover: '#1B1B1B',
+            fitLime: '#C6FF00',
+            fitLimeHover: '#b3e600',
+            fitGray: '#A1A1AA',
+          },
+          boxShadow: {
+            'lime-glow': '0 0 25px rgba(198, 255, 0, 0.35)',
+            'lime-sm': '0 0 12px rgba(198, 255, 0, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #0B0B0B;
+      color: #FFFFFF;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Custom subtle scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0B0B0B;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #262626;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #C6FF00;
+    }
+
+    /* Neon geometric accent shapes */
+    .hero-triangle {
+      clip-path: polygon(100% 0, 0 100%, 100% 100%);
+    }
+    .about-slash {
+      clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    }
+
+    /* Dark map filter for Google Maps iframe so it blends seamlessly */
+    .dark-map-frame {
+      filter: invert(92%) hue-rotate(180deg) contrast(92%) brightness(90%);
+    }
+  </style>
+</head>
+<body class="bg-[#0B0B0B] text-white antialiased selection:bg-[#C6FF00] selection:text-black">
+
+  <!-- ==================== 1. TOP NAVBAR ==================== -->
+  <header class="sticky top-0 z-40 bg-[#0B0B0B]/90 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-2.5 group">
+          <div class="w-9 h-9 rounded-xl bg-[#C6FF00]/10 border border-[#C6FF00]/30 flex items-center justify-center text-[#C6FF00] group-hover:bg-[#C6FF00] group-hover:text-black transition-all duration-300">
+            <!-- Custom Dumbbell + Pulse SVG Icon -->
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6.5 6.5v11" />
+              <path d="M17.5 6.5v11" />
+              <path d="M3.5 8.5v7" />
+              <path d="M20.5 8.5v7" />
+              <path d="M6.5 12h2l1.5-2.5 2 5 1.5-2.5h4" />
+            </svg>
+          </div>
+          <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-white">Fit<span class="text-[#C6FF00]">Zone</span></span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center space-x-7 text-sm font-medium">
+          <a href="#home" class="nav-link text-[#C6FF00] border-b-2 border-[#C6FF00] pb-1 transition-colors">Home</a>
+          <a href="#about" class="nav-link text-zinc-300 hover:text-[#C6FF00] pb-1 transition-colors">About</a>
+          <a href="#classes" class="nav-link text-zinc-300 hover:text-[#C6FF00] pb-1 transition-colors">Classes</a>
+          <a href="#trainers" class="nav-link text-zinc-300 hover:text-[#C6FF00] pb-1 transition-colors">Trainers</a>
+          <a href="#bmi-calculator" class="nav-link text-zinc-300 hover:text-[#C6FF00] pb-1 transition-colors">BMI Tool</a>
+          <a href="#pricing" class="nav-link text-zinc-300 hover:text-[#C6FF00] pb-1 transition-colors">Pricing</a>
+          <a href="#contact" class="nav-link text-zinc-300 hover:text-[#C6FF00] pb-1 transition-colors">Contact</a>
+        </nav>
+
+        <!-- Right CTA + Mobile Menu Toggle -->
+        <div class="flex items-center gap-3">
+          <button onclick="openJoinModal('General Membership')" class="inline-flex items-center gap-2 bg-[#C6FF00] hover:bg-[#b5eb00] text-black font-bold text-sm px-5 py-2.5 rounded-full shadow-lime-sm hover:shadow-lime-glow transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer">
+            <span>Join Now</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+
+          <button id="mobile-menu-btn" aria-label="Toggle Menu" class="md:hidden p-2.5 rounded-xl bg-[#161616] border border-white/10 text-white hover:text-[#C6FF00] transition">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#121212] border-b border-white/10 px-4 pt-3 pb-6 space-y-2">
+      <a href="#home" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-[#C6FF00] font-semibold bg-white/5">Home</a>
+      <a href="#about" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-zinc-300 hover:text-[#C6FF00] hover:bg-white/5">About</a>
+      <a href="#classes" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-zinc-300 hover:text-[#C6FF00] hover:bg-white/5">Classes</a>
+      <a href="#trainers" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-zinc-300 hover:text-[#C6FF00] hover:bg-white/5">Trainers</a>
+      <a href="#bmi-calculator" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-zinc-300 hover:text-[#C6FF00] hover:bg-white/5">BMI & Goal Calculator</a>
+      <a href="#pricing" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-zinc-300 hover:text-[#C6FF00] hover:bg-white/5">Pricing</a>
+      <a href="#contact" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-zinc-300 hover:text-[#C6FF00] hover:bg-white/5">Contact & Maps</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== 2. HERO SECTION ==================== -->
+    <section id="home" class="relative pt-10 pb-12 lg:pt-16 lg:pb-16 overflow-hidden">
+      <!-- Ambient Background Glow -->
+      <div class="absolute top-10 right-1/4 w-96 h-96 bg-[#C6FF00]/10 rounded-full blur-[130px] pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+          
+          <!-- Left Text Content -->
+          <div class="lg:col-span-6 space-y-6 z-10">
+            <div class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold tracking-[0.22em] text-zinc-300 uppercase">
+              <span>STRONGER</span>
+              <span class="text-[#C6FF00]">•</span>
+              <span>FITTER</span>
+              <span class="text-[#C6FF00]">•</span>
+              <span>HAPPIER</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl lg:text-[64px] font-black leading-[1.06] tracking-tight text-white">
+              Your <span class="text-[#C6FF00]">Fitness</span><br />
+              Our Priority
+            </h1>
+
+            <p class="text-zinc-400 text-base sm:text-lg max-w-lg leading-relaxed">
+              Achieve your fitness goals with expert trainers, modern equipment and a supportive community.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+              <button onclick="openJoinModal('Free 3-Day Trial Pass')" class="inline-flex items-center gap-2.5 bg-[#C6FF00] hover:bg-[#b5eb00] text-black font-bold text-sm sm:text-base px-7 py-3.5 rounded-full shadow-lime-glow transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer">
+                <span>Get Started</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+
+              <button onclick="openVideoModal()" class="inline-flex items-center gap-3 text-white hover:text-[#C6FF00] font-semibold text-sm sm:text-base px-4 py-3 rounded-full transition-colors group cursor-pointer">
+                <span class="w-11 h-11 rounded-full border-2 border-[#C6FF00] flex items-center justify-center text-[#C6FF00] group-hover:bg-[#C6FF00] group-hover:text-black transition-all">
+                  <i data-lucide="play" class="w-4 h-4 fill-current ml-0.5"></i>
+                </span>
+                <span>Watch Video</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Hero Athlete Visual + Neon Geometric Accent -->
+          <div class="lg:col-span-6 relative flex justify-center lg:justify-end">
+            <div class="relative w-full max-w-md sm:max-w-lg">
+              <!-- Neon Lime Geometric Accent Wedge -->
+              <div class="absolute -top-4 -right-3 sm:-right-6 w-64 sm:w-80 h-64 sm:h-80 bg-[#C6FF00] rounded-3xl transform rotate-12 opacity-90"></div>
+              <div class="absolute -bottom-3 -left-3 w-36 h-36 bg-[#C6FF00]/20 rounded-2xl blur-xl"></div>
+
+              <!-- Athlete Image Container -->
+              <div class="relative rounded-3xl overflow-hidden border border-white/10 bg-[#141414] shadow-2xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=900&q=80" 
+                  alt="FitZone Athlete Dumbbell Workout" 
+                  onerror="this.src='https://placehold.co/800x850/161616/C6FF00?text=FitZone+Athlete'"
+                  class="w-full h-[380px] sm:h-[460px] object-cover object-center"
+                />
+                <!-- Subtle bottom gradient overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-transparent to-transparent opacity-75"></div>
+
+                <!-- Floating Live Badge -->
+                <div class="absolute bottom-4 left-4 right-4 bg-[#141414]/90 backdrop-blur-md border border-white/10 rounded-2xl p-3.5 flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#C6FF00] animate-ping"></span>
+                    <div>
+                      <p class="text-xs font-bold text-white">Open Today • 5:00 AM – 11:00 PM</p>
+                      <p class="text-[11px] text-zinc-400">F4FQ+899, Phase 4, Block G, Aya Nagar, New Delhi 110047</p>
+                    </div>
+                  </div>
+                  <a href="#contact" class="text-xs font-bold text-[#C6FF00] hover:underline">Map →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ==================== 3. VALUE PROPS BAR ==================== -->
+        <div class="mt-10 bg-[#141414] border border-white/10 rounded-3xl p-6 sm:p-8 shadow-xl">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-white/10">
+            
+            <!-- Prop 1 -->
+            <div class="flex flex-col items-center text-center px-4">
+              <div class="w-12 h-12 rounded-2xl bg-[#C6FF00]/10 flex items-center justify-center text-[#C6FF00] mb-3">
+                <i data-lucide="trophy" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-white font-bold text-base">Expert Trainers</h3>
+              <p class="text-zinc-400 text-xs mt-1">Get Professional Guidance</p>
+            </div>
+
+            <!-- Prop 2 -->
+            <div class="flex flex-col items-center text-center px-4">
+              <div class="w-12 h-12 rounded-2xl bg-[#C6FF00]/10 flex items-center justify-center text-[#C6FF00] mb-3">
+                <i data-lucide="activity" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-white font-bold text-base">Modern Equipment</h3>
+              <p class="text-zinc-400 text-xs mt-1">Train with the Best</p>
+            </div>
+
+            <!-- Prop 3 -->
+            <div class="flex flex-col items-center text-center px-4">
+              <div class="w-12 h-12 rounded-2xl bg-[#C6FF00]/10 flex items-center justify-center text-[#C6FF00] mb-3">
+                <i data-lucide="users" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-white font-bold text-base">Supportive Community</h3>
+              <p class="text-zinc-400 text-xs mt-1">Achieve Together</p>
+            </div>
+
+            <!-- Prop 4 -->
+            <div class="flex flex-col items-center text-center px-4">
+              <div class="w-12 h-12 rounded-2xl bg-[#C6FF00]/10 flex items-center justify-center text-[#C6FF00] mb-3">
+                <i data-lucide="shield-check" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-white font-bold text-base">Flexible Membership</h3>
+              <p class="text-zinc-400 text-xs mt-1">Choose What Suits You</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. OUR CLASSES SECTION ==================== -->
+    <section id="classes" class="py-16 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header Row -->
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+          <div>
+            <div class="flex items-center gap-2.5 text-[#C6FF00] text-xs font-bold tracking-[0.2em] uppercase mb-2">
+              <span class="w-6 h-0.5 bg-[#C6FF00]"></span>
+              <span>OUR CLASSES</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white">
+              Find Your Perfect<br class="hidden sm:inline" /> Workout
+            </h2>
+          </div>
+
+          <button onclick="openAllClassesModal()" class="inline-flex items-center gap-2 text-[#C6FF00] hover:text-white font-semibold text-sm transition-colors self-start sm:self-end cursor-pointer">
+            <span>View All Classes</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <!-- 4 Class Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Card 1: Strength Training -->
+          <div onclick="openClassModal('Strength Training')" class="group bg-[#141414] border border-white/10 hover:border-[#C6FF00]/60 rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer flex flex-col">
+            <div class="relative h-52 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=700&q=80" 
+                alt="Strength Training"
+                onerror="this.src='https://placehold.co/600x400/181818/C6FF00?text=Strength+Training'"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent"></div>
+            </div>
+            <div class="p-4 flex items-center justify-between bg-[#141414]">
+              <div class="flex items-center gap-2.5">
+                <span class="text-[#C6FF00]">
+                  <i data-lucide="dumbbell" class="w-5 h-5"></i>
+                </span>
+                <h3 class="font-bold text-sm sm:text-base text-white group-hover:text-[#C6FF00] transition-colors">Strength Training</h3>
+              </div>
+              <span class="w-8 h-8 rounded-full bg-white/10 group-hover:bg-[#C6FF00] group-hover:text-black flex items-center justify-center transition-colors">
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- Card 2: Yoga & Wellness -->
+          <div onclick="openClassModal('Yoga & Wellness')" class="group bg-[#141414] border border-white/10 hover:border-[#C6FF00]/60 rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer flex flex-col">
+            <div class="relative h-52 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=700&q=80" 
+                alt="Yoga & Wellness"
+                onerror="this.src='https://placehold.co/600x400/181818/C6FF00?text=Yoga+%26+Wellness'"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent"></div>
+            </div>
+            <div class="p-4 flex items-center justify-between bg-[#141414]">
+              <div class="flex items-center gap-2.5">
+                <span class="text-[#C6FF00]">
+                  <i data-lucide="flower-2" class="w-5 h-5"></i>
+                </span>
+                <h3 class="font-bold text-sm sm:text-base text-white group-hover:text-[#C6FF00] transition-colors">Yoga & Wellness</h3>
+              </div>
+              <span class="w-8 h-8 rounded-full bg-white/10 group-hover:bg-[#C6FF00] group-hover:text-black flex items-center justify-center transition-colors">
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- Card 3: Cardio Fitness -->
+          <div onclick="openClassModal('Cardio Fitness')" class="group bg-[#141414] border border-white/10 hover:border-[#C6FF00]/60 rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer flex flex-col">
+            <div class="relative h-52 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=700&q=80" 
+                alt="Cardio Fitness"
+                onerror="this.src='https://placehold.co/600x400/181818/C6FF00?text=Cardio+Fitness'"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent"></div>
+            </div>
+            <div class="p-4 flex items-center justify-between bg-[#141414]">
+              <div class="flex items-center gap-2.5">
+                <span class="text-[#C6FF00]">
+                  <i data-lucide="flame" class="w-5 h-5"></i>
+                </span>
+                <h3 class="font-bold text-sm sm:text-base text-white group-hover:text-[#C6FF00] transition-colors">Cardio Fitness</h3>
+              </div>
+              <span class="w-8 h-8 rounded-full bg-white/10 group-hover:bg-[#C6FF00] group-hover:text-black flex items-center justify-center transition-colors">
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- Card 4: Boxing & Combat -->
+          <div onclick="openClassModal('Boxing & Combat')" class="group bg-[#141414] border border-white/10 hover:border-[#C6FF00]/60 rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer flex flex-col">
+            <div class="relative h-52 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=700&q=80" 
+                alt="Boxing & Combat"
+                onerror="this.src='https://placehold.co/600x400/181818/C6FF00?text=Boxing+%26+Combat'"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent"></div>
+            </div>
+            <div class="p-4 flex items-center justify-between bg-[#141414]">
+              <div class="flex items-center gap-2.5">
+                <span class="text-[#C6FF00]">
+                  <i data-lucide="swords" class="w-5 h-5"></i>
+                </span>
+                <h3 class="font-bold text-sm sm:text-base text-white group-hover:text-[#C6FF00] transition-colors">Boxing & Combat</h3>
+              </div>
+              <span class="w-8 h-8 rounded-full bg-white/10 group-hover:bg-[#C6FF00] group-hover:text-black flex items-center justify-center transition-colors">
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. ABOUT FITZONE SECTION ==================== -->
+    <section id="about" class="py-16 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <!-- Left Battle Ropes Image + Neon Slashes -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative rounded-3xl overflow-hidden border border-white/10 bg-[#141414]">
+              <!-- Neon diagonal bars behind -->
+              <div class="absolute -left-6 top-6 w-20 h-64 bg-[#C6FF00] about-slash opacity-85 z-0"></div>
+              <img 
+                src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80" 
+                alt="Battle Ropes Intense Training at FitZone"
+                onerror="this.src='https://placehold.co/700x750/161616/C6FF00?text=FitZone+Training'"
+                class="relative z-10 w-full h-[380px] sm:h-[430px] object-cover"
+              />
+              <div class="absolute inset-0 z-10 bg-gradient-to-t from-[#0B0B0B] via-transparent to-transparent opacity-60"></div>
+            </div>
+          </div>
+
+          <!-- Center Story + Right 3 Circular Neon Badges -->
+          <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            
+            <!-- Middle Copy -->
+            <div class="md:col-span-7 space-y-5">
+              <div class="flex items-center gap-2.5 text-[#C6FF00] text-xs font-bold tracking-[0.2em] uppercase">
+                <span class="w-6 h-0.5 bg-[#C6FF00]"></span>
+                <span>ABOUT FITZONE</span>
+              </div>
+
+              <h2 class="text-3xl sm:text-4xl font-black leading-tight text-white">
+                Building a Healthier,<br />
+                <span class="text-[#C6FF00]">Stronger You</span>
+              </h2>
+
+              <p class="text-zinc-400 text-sm sm:text-base leading-relaxed">
+                At FitZone, we believe fitness is more than a workout—it's a lifestyle. Our expert trainers and modern facilities are here to help you stay fit, feel great and live better.
+              </p>
+
+              <div class="pt-2">
+                <a href="#contact" class="inline-flex items-center gap-2 bg-[#C6FF00] hover:bg-[#b5eb00] text-black font-bold text-sm px-6 py-3 rounded-full shadow-lime-sm transition-all">
+                  <span>Learn More</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right 3 Circular Neon-Outlined Badges -->
+            <div class="md:col-span-5 space-y-5">
+              <div class="flex items-center gap-4 bg-[#141414]/60 md:bg-transparent p-3 md:p-0 rounded-2xl border border-white/5 md:border-0">
+                <div class="w-14 h-14 shrink-0 rounded-full border-2 border-[#C6FF00] bg-[#C6FF00]/10 flex items-center justify-center text-[#C6FF00]">
+                  <i data-lucide="dumbbell" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h4 class="text-white font-bold text-sm leading-snug">State-of-the-Art Facilities</h4>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4 bg-[#141414]/60 md:bg-transparent p-3 md:p-0 rounded-2xl border border-white/5 md:border-0">
+                <div class="w-14 h-14 shrink-0 rounded-full border-2 border-[#C6FF00] bg-[#C6FF00]/10 flex items-center justify-center text-[#C6FF00]">
+                  <i data-lucide="heart-pulse" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h4 class="text-white font-bold text-sm leading-snug">Personalized Training Plans</h4>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4 bg-[#141414]/60 md:bg-transparent p-3 md:p-0 rounded-2xl border border-white/5 md:border-0">
+                <div class="w-14 h-14 shrink-0 rounded-full border-2 border-[#C6FF00] bg-[#C6FF00]/10 flex items-center justify-center text-[#C6FF00]">
+                  <i data-lucide="flame" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h4 class="text-white font-bold text-sm leading-snug">Results Driven Programs</h4>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ==================== 6. STATS BAR ==================== -->
+        <div class="mt-12 bg-[#141414] border border-white/10 rounded-3xl p-6 sm:p-8 shadow-xl">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-white/10">
+            
+            <div class="flex items-center justify-center gap-4 px-2">
+              <div class="w-11 h-11 rounded-2xl bg-[#C6FF00]/10 flex items-center justify-center text-[#C6FF00] shrink-0">
+                <i data-lucide="biceps-flexed" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <div class="text-2xl sm:text-3xl font-black text-white">10K+</div>
+                <div class="text-xs text-zinc-400">Happy Members</div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-center gap-4 px-2">
+              <div class="w-11 h-11 rounded-2xl bg-[#C6FF00]/10 flex items-center justify-center text-[#C6FF00] shrink-0">
+                <i data-lucide="calendar-check" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <div class="text-2xl sm:text-3xl font-black text-white">5+</div>
+                <div class="text-xs text-zinc-400">Years of Experience</div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-center gap-4 px-2">
+              <div class="w-11 h-11 rounded-2xl bg-[#C6FF00]/10 flex items-center justify-center text-[#C6FF00] shrink-0">
+                <i data-lucide="star" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <div class="text-2xl sm:text-3xl font-black text-white">98%</div>
+                <div class="text-xs text-zinc-400">Client Satisfaction</div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-center gap-4 px-2">
+              <div class="w-11 h-11 rounded-2xl bg-[#C6FF00]/10 flex items-center justify-center text-[#C6FF00] shrink-0">
+                <i data-lucide="award" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <div class="text-2xl sm:text-3xl font-black text-white">50+</div>
+                <div class="text-xs text-zinc-400">Fitness Programs</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. EXPERT TRAINERS SECTION ==================== -->
+    <section id="trainers" class="py-16 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+          <div>
+            <div class="flex items-center gap-2.5 text-[#C6FF00] text-xs font-bold tracking-[0.2em] uppercase mb-2">
+              <span class="w-6 h-0.5 bg-[#C6FF00]"></span>
+              <span>OUR TRAINERS</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white">
+              Meet Our Expert <span class="text-[#C6FF00]">Trainers</span>
+            </h2>
+          </div>
+
+          <!-- Carousel Controls -->
+          <div class="flex items-center gap-2.5">
+            <button onclick="rotateTrainers(-1)" aria-label="Previous Trainer" class="w-10 h-10 rounded-full border border-white/20 hover:border-[#C6FF00] text-zinc-300 hover:text-[#C6FF00] flex items-center justify-center transition-colors cursor-pointer">
+              <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            </button>
+            <button onclick="rotateTrainers(1)" aria-label="Next Trainer" class="w-10 h-10 rounded-full border border-[#C6FF00] bg-[#C6FF00]/10 hover:bg-[#C6FF00] text-[#C6FF00] hover:text-black flex items-center justify-center transition-colors cursor-pointer">
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Trainers Grid -->
+        <div id="trainers-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Populated dynamically by JS so carousel buttons smoothly cycle/highlight trainers -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 7.5. BMI & FITNESS GOAL CALCULATOR ==================== -->
+    <section id="bmi-calculator" class="py-16 lg:py-20 bg-[#0D0D0D] border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Left Form -->
+          <div class="lg:col-span-6 space-y-5">
+            <div class="flex items-center gap-2.5 text-[#C6FF00] text-xs font-bold tracking-[0.2em] uppercase">
+              <span class="w-6 h-0.5 bg-[#C6FF00]"></span>
+              <span>SMART FITNESS TOOL</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-black text-white">
+              BMI &amp; Fitness <span class="text-[#C6FF00]">Goal Calculator</span>
+            </h2>
+            <p class="text-zinc-400 text-sm sm:text-base">
+              Check your Body Mass Index (BMI) and get an instant FitZone workout &amp; nutrition program recommendation tailored to your body metrics.
+            </p>
+
+            <form onsubmit="calculateBMI(event)" class="bg-[#141414] border border-white/10 rounded-3xl p-6 space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-zinc-300 mb-1.5">Height (cm)</label>
+                  <input id="bmi-height" type="number" min="100" max="250" required placeholder="e.g. 175" value="175" class="w-full px-4 py-3 rounded-xl bg-[#0B0B0B] border border-white/10 focus:border-[#C6FF00] focus:outline-none text-sm text-white" />
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-zinc-300 mb-1.5">Weight (kg)</label>
+                  <input id="bmi-weight" type="number" min="30" max="250" step="0.1" required placeholder="e.g. 72" value="72" class="w-full px-4 py-3 rounded-xl bg-[#0B0B0B] border border-white/10 focus:border-[#C6FF00] focus:outline-none text-sm text-white" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-zinc-300 mb-1.5">Age (Years)</label>
+                  <input id="bmi-age" type="number" min="14" max="90" required value="26" class="w-full px-4 py-3 rounded-xl bg-[#0B0B0B] border border-white/10 focus:border-[#C6FF00] focus:outline-none text-sm text-white" />
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-zinc-300 mb-1.5">Primary Fitness Goal</label>
+                  <select id="bmi-goal" class="w-full px-4 py-3 rounded-xl bg-[#0B0B0B] border border-white/10 focus:border-[#C6FF00] focus:outline-none text-sm text-white">
+                    <option value="Fat Loss & Conditioning">Fat Loss &amp; Conditioning</option>
+                    <option value="Muscle Gain & Strength">Muscle Gain &amp; Strength</option>
+                    <option value="Stamina, Yoga & Mobility">Stamina, Yoga &amp; Mobility</option>
+                  </select>
+                </div>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 rounded-full bg-[#C6FF00] hover:bg-[#b5eb00] text-black font-bold text-sm shadow-lime-sm transition-all cursor-pointer flex items-center justify-center gap-2">
+                <i data-lucide="calculator" class="w-4 h-4"></i>
+                <span>Calculate My BMI &amp; Get Plan</span>
+              </button>
+            </form>
+          </div>
+
+          <!-- Right Result Card -->
+          <div class="lg:col-span-6">
+            <div class="bg-[#141414] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-6 relative overflow-hidden">
+              <div class="absolute -right-10 -top-10 w-40 h-40 bg-[#C6FF00]/10 rounded-full blur-2xl pointer-events-none"></div>
+              
+              <div class="flex items-center justify-between border-b border-white/10 pb-5">
+                <div>
+                  <span class="text-xs font-bold uppercase tracking-wider text-zinc-400">Your Calculated Score</span>
+                  <div class="flex items-baseline gap-3 mt-1">
+                    <span id="bmi-score" class="text-4xl sm:text-5xl font-black text-[#C6FF00]">23.5</span>
+                    <span id="bmi-category" class="px-3 py-1 rounded-full bg-[#C6FF00]/15 text-[#C6FF00] text-xs font-bold">Healthy Weight</span>
+                  </div>
+                </div>
+                <div class="w-12 h-12 rounded-2xl bg-[#C6FF00]/10 border border-[#C6FF00]/30 flex items-center justify-center text-[#C6FF00]">
+                  <i data-lucide="activity" class="w-6 h-6"></i>
+                </div>
+              </div>
+
+              <!-- BMI Scale Bar -->
+              <div class="space-y-2">
+                <div class="flex justify-between text-[11px] text-zinc-400 font-medium">
+                  <span>Underweight (&lt;18.5)</span>
+                  <span>Normal (18.5–24.9)</span>
+                  <span>Overweight (25+)</span>
+                </div>
+                <div class="w-full h-2.5 rounded-full bg-[#0B0B0B] overflow-hidden flex">
+                  <div class="w-1/4 bg-sky-400/70"></div>
+                  <div class="w-2/4 bg-[#C6FF00]"></div>
+                  <div class="w-1/4 bg-amber-400/80"></div>
+                </div>
+              </div>
+
+              <!-- Recommended FitZone Program -->
+              <div class="bg-[#0B0B0B] border border-white/10 rounded-2xl p-5 space-y-2.5">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-bold text-[#C6FF00] uppercase tracking-wider">Recommended FitZone Track</span>
+                  <span id="bmi-calories" class="text-xs text-zinc-400 font-semibold">~2,250 kcal/day</span>
+                </div>
+                <h4 id="bmi-plan-title" class="text-lg font-extrabold text-white">Lean Athletic Conditioning + Strength</h4>
+                <p id="bmi-plan-desc" class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                  Combine 4 days of progressive Strength Training with 2 days of Cardio Fitness or Boxing to build lean muscle and boost stamina.
+                </p>
+              </div>
+
+              <button id="bmi-cta-btn" onclick="openJoinModal('Custom BMI Plan: Lean Athletic Conditioning')" class="w-full py-3 rounded-full border border-[#C6FF00] text-[#C6FF00] hover:bg-[#C6FF00] hover:text-black font-bold text-sm transition-all cursor-pointer">
+                Claim Free Consultation for This Plan →
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 8. PRICING / MEMBERSHIP PLANS ==================== -->
+    <section id="pricing" class="py-16 lg:py-20 bg-[#0E0E0E] border-y border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-2 text-[#C6FF00] text-xs font-bold tracking-[0.2em] uppercase mb-2">
+            <span class="w-6 h-0.5 bg-[#C6FF00]"></span>
+            <span>FLEXIBLE MEMBERSHIP</span>
+            <span class="w-6 h-0.5 bg-[#C6FF00]"></span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-black text-white">
+            Choose What <span class="text-[#C6FF00]">Suits You</span>
+          </h2>
+          <p class="text-zinc-400 text-sm sm:text-base mt-3">
+            No hidden fees. Switch billing cycles below to save up to 25% on quarterly &amp; annual memberships.
+          </p>
+
+          <!-- Billing Cycle Toggle (Monthly / Quarterly / Annual) -->
+          <div class="mt-6 inline-flex items-center p-1.5 rounded-full bg-[#161616] border border-white/10">
+            <button type="button" onclick="setBillingCycle('monthly')" id="bill-monthly" class="billing-btn px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold bg-[#C6FF00] text-black transition-all cursor-pointer">
+              Monthly
+            </button>
+            <button type="button" onclick="setBillingCycle('quarterly')" id="bill-quarterly" class="billing-btn px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold text-zinc-300 hover:text-white transition-all cursor-pointer">
+              Quarterly <span class="text-[10px] opacity-80">(-15%)</span>
+            </button>
+            <button type="button" onclick="setBillingCycle('annual')" id="bill-annual" class="billing-btn px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold text-zinc-300 hover:text-white transition-all cursor-pointer">
+              Annual <span class="text-[10px] opacity-80">(-25%)</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          <!-- Starter Plan -->
+          <div class="bg-[#141414] border border-white/10 rounded-3xl p-7 flex flex-col justify-between hover:border-white/25 transition-all">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-zinc-400">Starter</span>
+              <h3 class="text-2xl font-extrabold text-white mt-1">Basic Fitness</h3>
+              <div class="mt-4 flex items-baseline gap-1">
+                <span id="price-starter" class="text-4xl font-black text-white">₹1,499</span>
+                <span id="period-starter" class="text-zinc-400 text-sm">/ month</span>
+              </div>
+              <ul class="mt-6 space-y-3 text-sm text-zinc-300">
+                <li class="flex items-center gap-2.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-[#C6FF00]"></i> Full Gym &amp; Cardio Access</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-[#C6FF00]"></i> Locker &amp; Shower Facilities</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-[#C6FF00]"></i> 1 Free Fitness Assessment</li>
+              </ul>
+            </div>
+            <button id="btn-starter" onclick="openJoinModal('Basic Fitness — Monthly (₹1,499)')" class="mt-8 w-full py-3 rounded-full border border-[#C6FF00] text-[#C6FF00] hover:bg-[#C6FF00] hover:text-black font-bold text-sm transition-colors cursor-pointer">
+              Select Plan
+            </button>
+          </div>
+
+          <!-- Pro Plan (Highlighted) -->
+          <div class="bg-[#161616] border-2 border-[#C6FF00] rounded-3xl p-7 flex flex-col justify-between relative shadow-lime-sm">
+            <span class="absolute -top-3.5 right-6 bg-[#C6FF00] text-black text-xs font-extrabold px-3.5 py-1 rounded-full uppercase tracking-wider">
+              Most Popular
+            </span>
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-[#C6FF00]">Pro Athlete</span>
+              <h3 class="text-2xl font-extrabold text-white mt-1">All-Access + Classes</h3>
+              <div class="mt-4 flex items-baseline gap-1">
+                <span id="price-pro" class="text-4xl font-black text-white">₹2,499</span>
+                <span id="period-pro" class="text-zinc-400 text-sm">/ month</span>
+              </div>
+              <ul class="mt-6 space-y-3 text-sm text-zinc-200">
+                <li class="flex items-center gap-2.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-[#C6FF00]"></i> Unlimited Strength &amp; Cardio</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-[#C6FF00]"></i> All Group Classes (Yoga, Boxing, HIIT)</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-[#C6FF00]"></i> Monthly Body Composition Scan</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-[#C6FF00]"></i> Custom Diet &amp; Workout Blueprint</li>
+              </ul>
+            </div>
+            <button id="btn-pro" onclick="openJoinModal('All-Access + Classes — Monthly (₹2,499)')" class="mt-8 w-full py-3.5 rounded-full bg-[#C6FF00] hover:bg-[#b5eb00] text-black font-bold text-sm shadow-lime-sm transition-all cursor-pointer">
+              Join Now →
+            </button>
+          </div>
+
+          <!-- Elite Personal Training -->
+          <div class="bg-[#141414] border border-white/10 rounded-3xl p-7 flex flex-col justify-between hover:border-white/25 transition-all">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-zinc-400">Elite 1-on-1</span>
+              <h3 class="text-2xl font-extrabold text-white mt-1">Personal Coaching</h3>
+              <div class="mt-4 flex items-baseline gap-1">
+                <span id="price-elite" class="text-4xl font-black text-white">₹4,999</span>
+                <span id="period-elite" class="text-zinc-400 text-sm">/ month</span>
+              </div>
+              <ul class="mt-6 space-y-3 text-sm text-zinc-300">
+                <li class="flex items-center gap-2.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-[#C6FF00]"></i> Everything in Pro Athlete</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-[#C6FF00]"></i> 12 Dedicated 1-on-1 Trainer Sessions</li>
+                <li class="flex items-center gap-2.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-[#C6FF00]"></i> Weekly Progress &amp; Nutrition Check-ins</li>
+              </ul>
+            </div>
+            <button id="btn-elite" onclick="openJoinModal('Personal Coaching — Monthly (₹4,999)')" class="mt-8 w-full py-3 rounded-full border border-[#C6FF00] text-[#C6FF00] hover:bg-[#C6FF00] hover:text-black font-bold text-sm transition-colors cursor-pointer">
+              Select Plan
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 9. TESTIMONIALS & CTA BANNER ==================== -->
+    <section class="py-16 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          
+          <!-- Left Card: Testimonials -->
+          <div class="lg:col-span-5 flex flex-col justify-between">
+            <div class="mb-5 flex items-end justify-between">
+              <div>
+                <div class="flex items-center gap-2.5 text-[#C6FF00] text-xs font-bold tracking-[0.2em] uppercase mb-2">
+                  <span class="w-6 h-0.5 bg-[#C6FF00]"></span>
+                  <span>TESTIMONIALS</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-black text-white">
+                  What Our Members <span class="text-[#C6FF00]">Say</span>
+                </h2>
+              </div>
+
+              <div class="flex items-center gap-2">
+                <button onclick="changeTestimonial(-1)" aria-label="Previous Testimonial" class="w-8 h-8 rounded-full border border-white/15 hover:border-[#C6FF00] text-zinc-400 hover:text-[#C6FF00] flex items-center justify-center transition cursor-pointer">
+                  <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                </button>
+                <button onclick="changeTestimonial(1)" aria-label="Next Testimonial" class="w-8 h-8 rounded-full border border-white/15 hover:border-[#C6FF00] text-zinc-400 hover:text-[#C6FF00] flex items-center justify-center transition cursor-pointer">
+                  <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="bg-[#141414] border border-white/10 rounded-3xl p-6 sm:p-7 flex-1 flex flex-col justify-between">
+              <div class="flex items-start gap-4">
+                <span class="text-4xl font-black text-[#C6FF00] leading-none">“</span>
+                <p id="testimonial-quote" class="text-zinc-200 text-sm sm:text-base leading-relaxed">
+                  FitZone has completely changed my fitness journey. The trainers are amazing!
+                </p>
+              </div>
+
+              <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <img 
+                    id="testimonial-avatar"
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" 
+                    alt="Sarah Mitchell"
+                    onerror="this.src='https://placehold.co/100x100/222222/C6FF00?text=SM'"
+                    class="w-11 h-11 rounded-full object-cover border-2 border-[#C6FF00]"
+                  />
+                  <div>
+                    <h4 id="testimonial-name" class="text-white font-bold text-sm">Sarah Mitchell</h4>
+                    <p id="testimonial-role" class="text-zinc-400 text-xs">Member</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-0.5 text-[#C6FF00]">
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Card: Ready to Transform Your Body? -->
+          <div class="lg:col-span-7 relative rounded-3xl overflow-hidden border border-white/10 bg-[#141414] flex items-center">
+            <img 
+              src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=1000&q=80" 
+              alt="Dumbbells on Gym Floor"
+              onerror="this.src='https://placehold.co/900x450/161616/C6FF00?text=Transform+Your+Body'"
+              class="absolute inset-0 w-full h-full object-cover opacity-45"
+            />
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0B0B0B] via-[#0B0B0B]/85 to-transparent"></div>
+            <!-- Neon diagonal stripe -->
+            <div class="absolute bottom-0 right-12 w-32 h-2 bg-[#C6FF00] transform -skew-x-12"></div>
+
+            <div class="relative z-10 p-7 sm:p-10 max-w-lg space-y-4">
+              <h3 class="text-2xl sm:text-3xl font-black text-white leading-tight">
+                Ready to Transform Your Body?
+              </h3>
+              <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
+                Join FitZone today and take the first step towards a healthier, stronger you.
+              </p>
+              <div class="pt-2">
+                <button onclick="openJoinModal('Transformation Program')" class="inline-flex items-center gap-2 bg-[#C6FF00] hover:bg-[#b5eb00] text-black font-bold text-sm px-6 py-3 rounded-full shadow-lime-sm transition-all cursor-pointer">
+                  <span>Join Now</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 10. GOOGLE MAPS & LOCATION CONTACT SECTION ==================== -->
+    <section id="contact" class="py-16 lg:py-20 bg-[#0E0E0E] border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+          <div>
+            <div class="flex items-center gap-2.5 text-[#C6FF00] text-xs font-bold tracking-[0.2em] uppercase mb-2">
+              <span class="w-6 h-0.5 bg-[#C6FF00]"></span>
+              <span>GOOGLE MAPS &amp; LOCATION</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-black text-white">
+              Visit <span class="text-[#C6FF00]">FitZone</span> Today
+            </h2>
+          </div>
+
+          <a 
+            href="https://www.google.com/maps/search/?api=1&query=F4FQ%2B899%2C+Phase+4%2C+Block+G%2C+Aya+Nagar%2C+New+Delhi%2C+Delhi+110047" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 bg-[#C6FF00] hover:bg-[#b5eb00] text-black font-bold text-sm px-5 py-3 rounded-full shadow-lime-sm transition-all self-start sm:self-end"
+          >
+            <i data-lucide="map-pin" class="w-4 h-4"></i>
+            <span>Open in Google Maps</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          
+          <!-- Google Business Profile Card -->
+          <div class="lg:col-span-5 bg-[#141414] border border-white/10 rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center gap-1.5 text-xs font-bold bg-[#C6FF00]/15 text-[#C6FF00] px-3 py-1 rounded-full">
+                  <i data-lucide="badge-check" class="w-3.5 h-3.5"></i> Verified Fitness Center
+                </span>
+                <div class="flex items-center gap-1 text-sm font-bold text-white">
+                  <span class="text-[#C6FF00]">★ 4.9</span>
+                  <span class="text-zinc-400 font-normal">(320+ Reviews)</span>
+                </div>
+              </div>
+
+              <h3 class="text-2xl font-black text-white mt-4">FitZone Gym &amp; Fitness</h3>
+              <p class="text-zinc-400 text-xs mt-1">Gym • Fitness Center • Personal Trainer • Yoga &amp; Boxing</p>
+
+              <div class="mt-6 space-y-4 text-sm">
+                <div class="flex items-start gap-3.5">
+                  <div class="w-9 h-9 rounded-xl bg-[#C6FF00]/10 text-[#C6FF00] flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between gap-2">
+                      <p class="font-semibold text-white">Location Address</p>
+                      <button type="button" onclick="copyGymAddress()" id="copy-address-btn" class="inline-flex items-center gap-1 text-[11px] font-bold text-[#C6FF00] hover:underline cursor-pointer">
+                        <i data-lucide="copy" class="w-3 h-3"></i>
+                        <span>Copy Address</span>
+                      </button>
+                    </div>
+                    <p id="gym-address-text" class="text-zinc-400 text-xs sm:text-sm mt-0.5">F4FQ+899, Phase 4, Block G, Aya Nagar, New Delhi, Delhi 110047</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3.5">
+                  <div class="w-9 h-9 rounded-xl bg-[#C6FF00]/10 text-[#C6FF00] flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="clock" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-white">Opening Hours</p>
+                    <p class="text-zinc-400 text-xs sm:text-sm">Mon – Sat: 5:00 AM – 11:00 PM<br/>Sunday: 7:00 AM – 2:00 PM</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3.5">
+                  <div class="w-9 h-9 rounded-xl bg-[#C6FF00]/10 text-[#C6FF00] flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="phone-call" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-white">Direct Contact</p>
+                    <p class="text-zinc-400 text-xs sm:text-sm">+91 98765 43210 • hello@fitzonegym.in</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Directions / Book Visit Actions -->
+            <div class="grid grid-cols-2 gap-3 pt-2">
+              <a href="https://www.google.com/maps/search/?api=1&query=F4FQ%2B899%2C+Phase+4%2C+Block+G%2C+Aya+Nagar%2C+New+Delhi%2C+Delhi+110047" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm transition">
+                <i data-lucide="navigation" class="w-4 h-4 text-[#C6FF00]"></i>
+                <span>Get Directions</span>
+              </a>
+              <button onclick="openJoinModal('Free Gym Tour & Trial')" class="flex items-center justify-center gap-2 py-3 rounded-full bg-[#C6FF00] hover:bg-[#b5eb00] text-black font-bold text-xs sm:text-sm transition cursor-pointer">
+                <i data-lucide="calendar" class="w-4 h-4"></i>
+                <span>Book Free Visit</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Keyless Dark-Mode Google Maps Embed (Aya Nagar, New Delhi 110047) + Quick Callback Strip -->
+          <div class="lg:col-span-7 flex flex-col gap-6">
+            <div class="rounded-3xl overflow-hidden border border-white/10 bg-[#141414] h-[400px] md:h-[460px] relative shadow-2xl">
+              <iframe 
+                title="FitZone Gym — F4FQ+899, Phase 4, Block G, Aya Nagar, New Delhi, Delhi 110047"
+                src="https://maps.google.com/maps?q=F4FQ%2B899%2C%20Phase%204%2C%20Block%20G%2C%20Aya%20Nagar%2C%20New%20Delhi%2C%20Delhi%20110047&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                class="w-full h-full border-0 dark-map-frame"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+              <!-- Floating Pin Overlay Pill -->
+              <a href="https://www.google.com/maps/search/?api=1&query=F4FQ%2B899%2C+Phase+4%2C+Block+G%2C+Aya+Nagar%2C+New+Delhi%2C+Delhi+110047" target="_blank" rel="noopener noreferrer" class="absolute bottom-4 left-4 right-4 sm:right-auto bg-[#0B0B0B]/95 hover:bg-black border border-[#C6FF00]/50 backdrop-blur-md px-4 py-2.5 rounded-2xl flex items-center justify-between sm:justify-start gap-3 shadow-lg transition">
+                <div class="flex items-center gap-2.5">
+                  <span class="w-3 h-3 rounded-full bg-[#C6FF00] animate-pulse"></span>
+                  <span class="text-xs font-bold text-white">F4FQ+899, Phase 4, Block G, Aya Nagar, New Delhi 110047</span>
+                </div>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#C6FF00] shrink-0"></i>
+              </a>
+            </div>
+
+            <!-- Quick WhatsApp / Callback Booking Form -->
+            <div class="bg-[#141414] border border-white/10 rounded-3xl p-5 sm:p-6">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                <div>
+                  <h4 class="text-base font-extrabold text-white flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-[#C6FF00]"></span>
+                    Quick WhatsApp / Callback Request
+                  </h4>
+                  <p class="text-xs text-zinc-400">Drop your number and our coach will send fees, timings &amp; Google Maps pin on WhatsApp.</p>
+                </div>
+              </div>
+              <form id="callback-form" onsubmit="handleCallbackSubmit(event)" class="grid grid-cols-1 sm:grid-cols-12 gap-3">
+                <input id="cb-name" type="text" required placeholder="Your Name" class="sm:col-span-4 px-4 py-2.5 rounded-xl bg-[#0B0B0B] border border-white/10 focus:border-[#C6FF00] focus:outline-none text-xs sm:text-sm text-white" />
+                <input id="cb-phone" type="tel" required placeholder="WhatsApp / Phone No." class="sm:col-span-4 px-4 py-2.5 rounded-xl bg-[#0B0B0B] border border-white/10 focus:border-[#C6FF00] focus:outline-none text-xs sm:text-sm text-white" />
+                <button type="submit" class="sm:col-span-4 py-2.5 px-4 rounded-xl bg-[#C6FF00] hover:bg-[#b5eb00] text-black font-bold text-xs sm:text-sm transition cursor-pointer flex items-center justify-center gap-1.5">
+                  <i data-lucide="message-circle" class="w-4 h-4"></i>
+                  <span>Send on WhatsApp</span>
+                </button>
+              </form>
+              <p id="callback-status" class="hidden text-xs font-semibold text-[#C6FF00] mt-2.5">
+                ✓ Request received! Our FitZone desk is connecting with you on WhatsApp shortly.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 11. FOOTER ==================== -->
+  <footer class="bg-[#0B0B0B] border-t border-white/10 pt-12 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-8 border-b border-white/10">
+        
+        <!-- Brand & Tagline -->
+        <div class="text-center md:text-left">
+          <a href="#home" class="inline-flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-xl bg-[#C6FF00]/15 border border-[#C6FF00]/30 flex items-center justify-center text-[#C6FF00]">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6.5 6.5v11" />
+                <path d="M17.5 6.5v11" />
+                <path d="M3.5 8.5v7" />
+                <path d="M20.5 8.5v7" />
+                <path d="M6.5 12h2l1.5-2.5 2 5 1.5-2.5h4" />
+              </svg>
+            </div>
+            <span class="text-xl font-extrabold text-white">Fit<span class="text-[#C6FF00]">Zone</span></span>
+          </a>
+          <p class="text-zinc-400 text-xs mt-2">Train. Transform. Thrive.</p>
+          <p class="text-zinc-500 text-[11px] mt-1">F4FQ+899, Phase 4, Block G, Aya Nagar, New Delhi, Delhi 110047</p>
+        </div>
+
+        <!-- Footer Nav Links -->
+        <div class="flex flex-wrap justify-center gap-6 text-xs sm:text-sm text-zinc-400">
+          <a href="#home" class="hover:text-[#C6FF00] transition">Home</a>
+          <a href="#about" class="hover:text-[#C6FF00] transition">About</a>
+          <a href="#classes" class="hover:text-[#C6FF00] transition">Classes</a>
+          <a href="#trainers" class="hover:text-[#C6FF00] transition">Trainers</a>
+          <a href="#pricing" class="hover:text-[#C6FF00] transition">Pricing</a>
+          <a href="#contact" class="hover:text-[#C6FF00] transition">Contact</a>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="flex items-center gap-3">
+          <a href="#contact" aria-label="Facebook" class="w-9 h-9 rounded-full bg-[#161616] hover:bg-[#C6FF00] text-white hover:text-black flex items-center justify-center transition">
+            <i data-lucide="facebook" class="w-4 h-4"></i>
+          </a>
+          <a href="#contact" aria-label="Instagram" class="w-9 h-9 rounded-full bg-[#161616] hover:bg-[#C6FF00] text-white hover:text-black flex items-center justify-center transition">
+            <i data-lucide="instagram" class="w-4 h-4"></i>
+          </a>
+          <a href="#contact" aria-label="YouTube" class="w-9 h-9 rounded-full bg-[#161616] hover:bg-[#C6FF00] text-white hover:text-black flex items-center justify-center transition">
+            <i data-lucide="youtube" class="w-4 h-4"></i>
+          </a>
+          <a href="#contact" aria-label="Twitter" class="w-9 h-9 rounded-full bg-[#161616] hover:bg-[#C6FF00] text-white hover:text-black flex items-center justify-center transition">
+            <i data-lucide="twitter" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="pt-6 text-center text-xs text-zinc-500">
+        © 2026 FitZone. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== INTERACTIVE MODALS ==================== -->
+
+  <!-- 1. Join Now / Free Trial Modal -->
+  <div id="join-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+    <div class="bg-[#141414] border border-white/15 rounded-3xl max-w-md w-full p-6 sm:p-8 relative shadow-2xl">
+      <button onclick="closeModal('join-modal')" aria-label="Close" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/10 hover:bg-[#C6FF00] text-white hover:text-black flex items-center justify-center transition cursor-pointer">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <div class="inline-flex items-center gap-2 text-[#C6FF00] text-xs font-bold uppercase tracking-wider mb-1">
+        <span>START YOUR JOURNEY</span>
+      </div>
+      <h3 class="text-2xl font-black text-white">Join <span class="text-[#C6FF00]">FitZone</span></h3>
+      <p class="text-zinc-400 text-xs sm:text-sm mt-1">Fill in your details and our coach will confirm your slot right away.</p>
+
+      <form id="join-form" onsubmit="handleJoinSubmit(event)" class="mt-5 space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-zinc-300 mb-1">Full Name</label>
+          <input type="text" required placeholder="e.g. Rohan Sharma" class="w-full px-4 py-2.5 rounded-xl bg-[#0B0B0B] border border-white/10 focus:border-[#C6FF00] focus:outline-none text-sm text-white" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-zinc-300 mb-1">Phone / WhatsApp Number</label>
+          <input type="tel" required placeholder="+91 98765 43210" class="w-full px-4 py-2.5 rounded-xl bg-[#0B0B0B] border border-white/10 focus:border-[#C6FF00] focus:outline-none text-sm text-white" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-zinc-300 mb-1">Selected Program / Plan</label>
+          <input id="selected-plan-input" type="text" readonly class="w-full px-4 py-2.5 rounded-xl bg-[#0B0B0B] border border-[#C6FF00]/40 text-sm font-semibold text-[#C6FF00]" />
+        </div>
+        <button type="submit" class="w-full py-3 rounded-full bg-[#C6FF00] hover:bg-[#b5eb00] text-black font-bold text-sm shadow-lime-sm transition cursor-pointer">
+          Confirm Registration →
+        </button>
+      </form>
+
+      <div id="join-success" class="hidden text-center py-6 space-y-3">
+        <div class="w-14 h-14 rounded-full bg-[#C6FF00]/20 text-[#C6FF00] flex items-center justify-center mx-auto">
+          <i data-lucide="check" class="w-7 h-7"></i>
+        </div>
+        <h4 class="text-xl font-bold text-white">You're In!</h4>
+        <p class="text-zinc-400 text-sm">Welcome to FitZone! Our team will reach out on WhatsApp/Call within 15 minutes.</p>
+        <button onclick="closeModal('join-modal')" class="mt-2 px-6 py-2.5 rounded-full bg-[#C6FF00] text-black font-bold text-xs cursor-pointer">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Class Details Modal -->
+  <div id="class-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+    <div class="bg-[#141414] border border-white/15 rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl">
+      <button onclick="closeModal('class-modal')" aria-label="Close" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/10 hover:bg-[#C6FF00] text-white hover:text-black flex items-center justify-center transition cursor-pointer">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <span class="text-xs font-bold uppercase tracking-widest text-[#C6FF00]">FITZONE PROGRAM</span>
+      <h3 id="class-modal-title" class="text-2xl font-black text-white mt-1">Strength Training</h3>
+      <p id="class-modal-desc" class="text-zinc-300 text-sm mt-3 leading-relaxed"></p>
+
+      <div class="mt-5 grid grid-cols-2 gap-3 text-xs">
+        <div class="bg-[#0B0B0B] p-3.5 rounded-2xl border border-white/5">
+          <span class="text-zinc-400 block">Schedule</span>
+          <span id="class-modal-time" class="text-white font-bold mt-0.5 block">Mon - Sat • 6 AM & 6 PM</span>
+        </div>
+        <div class="bg-[#0B0B0B] p-3.5 rounded-2xl border border-white/5">
+          <span class="text-zinc-400 block">Intensity & Focus</span>
+          <span id="class-modal-focus" class="text-[#C6FF00] font-bold mt-0.5 block">Muscle & Power</span>
+        </div>
+      </div>
+
+      <div class="mt-6 flex justify-end gap-3">
+        <button onclick="closeModal('class-modal')" class="px-5 py-2.5 rounded-full bg-white/10 text-white text-xs font-bold cursor-pointer">Close</button>
+        <button id="class-book-btn" class="px-6 py-2.5 rounded-full bg-[#C6FF00] text-black text-xs font-bold cursor-pointer">Book Free Trial Class →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Watch Video Preview Modal -->
+  <div id="video-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/85 backdrop-blur-sm p-4">
+    <div class="bg-[#141414] border border-white/15 rounded-3xl max-w-2xl w-full overflow-hidden relative shadow-2xl">
+      <div class="p-4 sm:p-5 flex items-center justify-between border-b border-white/10">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#C6FF00]"></span>
+          <h3 class="text-sm sm:text-base font-bold text-white">Inside FitZone — Facility & Training Tour</h3>
+        </div>
+        <button onclick="closeModal('video-modal')" aria-label="Close" class="w-8 h-8 rounded-full bg-white/10 hover:bg-[#C6FF00] text-white hover:text-black flex items-center justify-center transition cursor-pointer">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+      <div class="relative aspect-video bg-black flex flex-col items-center justify-center p-6 text-center">
+        <img 
+          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=80" 
+          alt="FitZone Gym Tour"
+          class="absolute inset-0 w-full h-full object-cover opacity-40"
+        />
+        <div class="relative z-10 max-w-md space-y-3">
+          <span class="inline-block px-3 py-1 rounded-full bg-[#C6FF00] text-black text-xs font-extrabold uppercase">HD Gym Walkthrough</span>
+          <h4 class="text-xl sm:text-2xl font-black text-white">Experience World-Class Strength, Cardio & Combat Zones</h4>
+          <p class="text-xs sm:text-sm text-zinc-300">Book a free in-person visit today to test our equipment and meet your personal coach.</p>
+          <button onclick="closeModal('video-modal'); openJoinModal('VIP Facility Tour')" class="mt-2 inline-flex items-center gap-2 bg-[#C6FF00] text-black font-bold text-xs sm:text-sm px-6 py-3 rounded-full cursor-pointer">
+            <span>Schedule In-Person Visit</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // Trainers Data & Interactive Carousel
+    const trainersData = [
+      {
+        name: 'Alex Carter',
+        role: 'Strength Coach',
+        img: 'https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=600&q=80'
+      },
+      {
+        name: 'Mia Johnson',
+        role: 'Yoga Trainer',
+        img: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80'
+      },
+      {
+        name: 'David Kim',
+        role: 'Cardio Specialist',
+        img: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=600&q=80'
+      },
+      {
+        name: 'Sophia Davis',
+        role: 'Fitness Coach',
+        img: 'https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=600&q=80'
+      }
+    ];
+
+    let trainerStartIndex = 0;
+
+    function renderTrainers() {
+      const grid = document.getElementById('trainers-grid');
+      grid.innerHTML = '';
+
+      for (let i = 0; i < trainersData.length; i++) {
+        const idx = (trainerStartIndex + i) % trainersData.length;
+        const t = trainersData[idx];
+
+        const card = document.createElement('div');
+        card.className = 'group bg-[#141414] border border-white/10 hover:border-[#C6FF00]/60 rounded-2xl p-4 flex items-center gap-4 transition-all duration-300';
+        card.innerHTML = `
+          <div class="w-20 h-24 rounded-xl overflow-hidden bg-[#1E1E1E] shrink-0">
+            <img 
+              src="${t.img}" 
+              alt="${t.name}" 
+              onerror="this.src='https://placehold.co/200x240/1E1E1E/C6FF00?text=${encodeURIComponent(t.name.split(' ')[0])}'"
+              class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div>
+            <h3 class="font-bold text-base text-white group-hover:text-[#C6FF00] transition-colors">${t.name}</h3>
+            <p class="text-xs text-zinc-400 mt-0.5">${t.role}</p>
+            <button onclick="openJoinModal('1-on-1 Session with ${t.name}')" class="mt-2.5 text-[11px] font-bold text-[#C6FF00] hover:underline cursor-pointer">
+              Book Session →
+            </button>
+          </div>
+        `;
+        grid.appendChild(card);
+      }
+    }
+
+    function rotateTrainers(dir) {
+      trainerStartIndex = (trainerStartIndex + dir + trainersData.length) % trainersData.length;
+      renderTrainers();
+    }
+
+    renderTrainers();
+
+    // Testimonials Carousel Data
+    const testimonials = [
+      {
+        quote: 'FitZone has completely changed my fitness journey. The trainers are amazing!',
+        name: 'Sarah Mitchell',
+        role: 'Member',
+        avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80'
+      },
+      {
+        quote: 'Best equipment in town and super motivating atmosphere. Lost 9 kg in 3 months with Alex & David!',
+        name: 'Vikram Mehta',
+        role: 'Pro Member',
+        avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80'
+      },
+      {
+        quote: 'The Yoga & Boxing classes keep every week exciting. Clean facilities and super friendly coaches.',
+        name: 'Ananya Verma',
+        role: 'Member',
+        avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80'
+      }
+    ];
+
+    let testimonialIdx = 0;
+
+    function changeTestimonial(step) {
+      testimonialIdx = (testimonialIdx + step + testimonials.length) % testimonials.length;
+      const item = testimonials[testimonialIdx];
+      document.getElementById('testimonial-quote').textContent = item.quote;
+      document.getElementById('testimonial-name').textContent = item.name;
+      document.getElementById('testimonial-role').textContent = item.role;
+      document.getElementById('testimonial-avatar').src = item.avatar;
+    }
+
+    // Class Details Data
+    const classDetails = {
+      'Strength Training': {
+        desc: 'Build lean muscle mass, raw power, and functional strength using Olympic lifting platforms, calibrated plates, and progressive overload coaching.',
+        time: 'Mon – Sat • 6:00 AM, 10:00 AM & 6:30 PM',
+        focus: 'Hypertrophy & Strength'
+      },
+      'Yoga & Wellness': {
+        desc: 'Restore mobility, deepen flexibility, and sharpen mental clarity through guided Vinyasa flows, core stability, and breathwork sessions.',
+        time: 'Daily • 7:00 AM & 5:30 PM',
+        focus: 'Mobility & Mindfulness'
+      },
+      'Cardio Fitness': {
+        desc: 'High-energy HIIT circuits, curved treadmills, rowers, and assault bikes designed to maximize endurance and accelerate fat burn.',
+        time: 'Mon – Sat • 7:30 AM & 7:30 PM',
+        focus: 'Stamina & Conditioning'
+      },
+      'Boxing & Combat': {
+        desc: 'Learn authentic striking technique, footwork, heavy-bag combinations, and high-tempo agility drills in a supportive group setting.',
+        time: 'Tue, Thu, Sat • 6:00 PM & 8:00 PM',
+        focus: 'Agility & Combat Power'
+      }
+    };
+
+    function openClassModal(className) {
+      const info = classDetails[className];
+      if (!info) return;
+      document.getElementById('class-modal-title').textContent = className;
+      document.getElementById('class-modal-desc').textContent = info.desc;
+      document.getElementById('class-modal-time').textContent = info.time;
+      document.getElementById('class-modal-focus').textContent = info.focus;
+      document.getElementById('class-book-btn').onclick = () => {
+        closeModal('class-modal');
+        openJoinModal(className + ' (Free Trial)');
+      };
+      showModal('class-modal');
+    }
+
+    function openAllClassesModal() {
+      openClassModal('Strength Training');
+    }
+
+    // Join Modal Controls
+    function openJoinModal(planName) {
+      document.getElementById('join-form').classList.remove('hidden');
+      document.getElementById('join-success').classList.add('hidden');
+      document.getElementById('selected-plan-input').value = planName || 'General Membership';
+      showModal('join-modal');
+    }
+
+    function handleJoinSubmit(e) {
+      e.preventDefault();
+      document.getElementById('join-form').classList.add('hidden');
+      document.getElementById('join-success').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function openVideoModal() {
+      showModal('video-modal');
+    }
+
+    function showModal(id) {
+      const el = document.getElementById(id);
+      el.classList.remove('hidden');
+      el.classList.add('flex');
+    }
+
+    function closeModal(id) {
+      const el = document.getElementById(id);
+      el.classList.add('hidden');
+      el.classList.remove('flex');
+    }
+
+    // Close modal when clicking outside dialog
+    ['join-modal', 'class-modal', 'video-modal'].forEach(id => {
+      document.getElementById(id).addEventListener('click', (e) => {
+        if (e.target.id === id) closeModal(id);
+      });
+    });
+
+    // Copy Gym Address with fallback
+    function copyGymAddress() {
+      const addressText = document.getElementById('gym-address-text').textContent.trim();
+      const btn = document.getElementById('copy-address-btn');
+      const tempInput = document.createElement('textarea');
+      tempInput.value = addressText;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      try {
+        document.execCommand('copy');
+        btn.innerHTML = '<i data-lucide="check" class="w-3 h-3"></i><span>Copied!</span>';
+        lucide.createIcons();
+        setTimeout(() => {
+          btn.innerHTML = '<i data-lucide="copy" class="w-3 h-3"></i><span>Copy Address</span>';
+          lucide.createIcons();
+        }, 2200);
+      } catch (err) {
+        console.error('Copy failed', err);
+      }
+      document.body.removeChild(tempInput);
+    }
+
+    // Membership Pricing Toggle (Monthly / Quarterly / Annual)
+    const pricingTiers = {
+      monthly: {
+        period: '/ month',
+        label: 'Monthly',
+        starter: '₹1,499',
+        pro: '₹2,499',
+        elite: '₹4,999'
+      },
+      quarterly: {
+        period: '/ quarter',
+        label: 'Quarterly (Save 15%)',
+        starter: '₹3,820',
+        pro: '₹6,370',
+        elite: '₹12,740'
+      },
+      annual: {
+        period: '/ year',
+        label: 'Annual (Save 25%)',
+        starter: '₹13,490',
+        pro: '₹22,490',
+        elite: '₹44,990'
+      }
+    };
+
+    function setBillingCycle(cycle) {
+      const data = pricingTiers[cycle];
+      if (!data) return;
+
+      document.querySelectorAll('.billing-btn').forEach(btn => {
+        btn.classList.remove('bg-[#C6FF00]', 'text-black');
+        btn.classList.add('text-zinc-300');
+      });
+      const activeBtn = document.getElementById('bill-' + cycle);
+      activeBtn.classList.add('bg-[#C6FF00]', 'text-black');
+      activeBtn.classList.remove('text-zinc-300');
+
+      document.getElementById('price-starter').textContent = data.starter;
+      document.getElementById('period-starter').textContent = data.period;
+      document.getElementById('btn-starter').setAttribute('onclick', `openJoinModal('Basic Fitness — ${data.label} (${data.starter})')`);
+
+      document.getElementById('price-pro').textContent = data.pro;
+      document.getElementById('period-pro').textContent = data.period;
+      document.getElementById('btn-pro').setAttribute('onclick', `openJoinModal('All-Access + Classes — ${data.label} (${data.pro})')`);
+
+      document.getElementById('price-elite').textContent = data.elite;
+      document.getElementById('period-elite').textContent = data.period;
+      document.getElementById('btn-elite').setAttribute('onclick', `openJoinModal('Personal Coaching — ${data.label} (${data.elite})')`);
+    }
+
+    // BMI & Fitness Goal Calculator
+    function calculateBMI(e) {
+      e.preventDefault();
+      const heightCm = parseFloat(document.getElementById('bmi-height').value);
+      const weightKg = parseFloat(document.getElementById('bmi-weight').value);
+      const age = parseInt(document.getElementById('bmi-age').value, 10) || 25;
+      const goal = document.getElementById('bmi-goal').value;
+
+      if (!heightCm || !weightKg || heightCm <= 0 || weightKg <= 0) return;
+
+      const heightM = heightCm / 100;
+      const bmi = (weightKg / (heightM * heightM)).toFixed(1);
+      const bmr = Math.round((10 * weightKg + 6.25 * heightCm - 5 * age + 5) * 1.45);
+
+      let category = 'Healthy Weight';
+      let planTitle = 'Lean Athletic Conditioning + Strength';
+      let planDesc = 'Combine 4 days of progressive Strength Training with 2 days of Cardio Fitness or Boxing to build lean muscle and boost stamina.';
+      let targetCalories = bmr;
+
+      if (bmi < 18.5) {
+        category = 'Underweight';
+        planTitle = 'Hypertrophy Muscle & Mass Builder';
+        planDesc = 'Focus on compound Strength Training 4–5x/week with a high-protein calorie surplus and personalized coaching.';
+        targetCalories = bmr + 350;
+      } else if (bmi >= 25 && bmi < 30) {
+        category = 'Overweight';
+        planTitle = 'HIIT Fat-Burn & Metabolic Strength';
+        planDesc = 'High-energy Cardio Fitness, Boxing & Combat circuits paired with full-body resistance workouts for sustainable fat loss.';
+        targetCalories = Math.max(1500, bmr - 400);
+      } else if (bmi >= 30) {
+        category = 'High BMI Zone';
+        planTitle = 'Low-Impact Cardio, Mobility & Guided Coaching';
+        planDesc = 'Start with joint-friendly Cardio Fitness, Yoga & Wellness mobility, and 1-on-1 trainer supervision for safe transformation.';
+        targetCalories = Math.max(1500, bmr - 500);
+      }
+
+      if (goal === 'Stamina, Yoga & Mobility') {
+        planTitle = 'Yoga, Mobility & Endurance Flow';
+        planDesc = 'Balance flexibility, breathwork, core stability, and aerobic conditioning with Mia Johnson & David Kim.';
+      }
+
+      document.getElementById('bmi-score').textContent = bmi;
+      document.getElementById('bmi-category').textContent = category;
+      document.getElementById('bmi-calories').textContent = `~${targetCalories.toLocaleString()} kcal/day`;
+      document.getElementById('bmi-plan-title').textContent = planTitle;
+      document.getElementById('bmi-plan-desc').textContent = planDesc;
+      document.getElementById('bmi-cta-btn').setAttribute('onclick', `openJoinModal('Custom BMI Plan (${bmi}): ${planTitle}')`);
+    }
+
+    // Quick WhatsApp / Callback Handler
+    function handleCallbackSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('cb-name').value.trim();
+      const phone = document.getElementById('cb-phone').value.trim();
+      const statusEl = document.getElementById('callback-status');
+      statusEl.textContent = `✓ Thank you ${name}! We've queued a WhatsApp & callback message to ${phone} with FitZone details & map pin.`;
+      statusEl.classList.remove('hidden');
+      document.getElementById('callback-form').reset();
+    }
+  </script>
+</body>
+</html>
